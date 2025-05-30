@@ -1,92 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600;1,700;1,800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 210 70.8% 11.2%; /* Page background: #0D1B2A */
+    --foreground: 0 0% 100%; /* Text on page background: #FFFFFF */
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%; /* Card/Surface: #FFFFFF */
+    --card-foreground: 0 0% 0%; /* Text on card: #000000 */
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 0 0% 0%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 179 78.7% 41.6%; /* Accent blue: #17BEBB */
+    --primary-foreground: 0 0% 100%; /* Text on accent: #FFFFFF */
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 210 40% 96.1%; /* Existing light mode secondary bg, PRD doesn't specify new one */
+    --secondary-foreground: 228 9.8% 56.5%; /* Secondary text: #878A99 */
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 210 40% 96.1%; /* Existing light mode muted bg, PRD doesn't specify new one */
+    --muted-foreground: 228 9.8% 56.5%; /* Secondary text: #878A99 */
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 179 78.7% 41.6%; /* Accent blue: #17BEBB */
+    --accent-foreground: 0 0% 100%; /* Text on accent: #FFFFFF */
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84.2% 60.2%; /* Keeping existing light destructive */
+    --destructive-foreground: 210 40% 98%; /* Keeping existing light destructive fg */
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 214.3 31.8% 91.4%; /* Existing light border, suitable for white card */
+    --input: 214.3 31.8% 91.4%; /* Existing light input, suitable for white card */
+    --ring: 179 78.7% 41.6%; /* Accent blue for ring: #17BEBB */
 
-    --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --radius: 0.375rem; /* rounded-md from PRD (6px) */
+    --font-primary: "Nunito", sans-serif; /* Primary font from PRD */
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 210 70.8% 11.2%; /* Page background: #0D1B2A (remains same) */
+    --foreground: 0 0% 100%; /* Text on page background: #FFFFFF (remains same) */
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 210 32.7% 18.4%; /* Dark card bg: e.g., #1F2E3D */
+    --card-foreground: 215 27.8% 91%; /* Light text on dark card: e.g., #E2E8F0 */
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 210 32.7% 18.4%;
+    --popover-foreground: 215 27.8% 91%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 179 78.7% 41.6%; /* Accent blue: #17BEBB (remains same) */
+    --primary-foreground: 0 0% 100%; /* Text on accent: #FFFFFF (remains same) */
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 215 25.1% 26.7%; /* Darker secondary bg: e.g., #334155 */
+    --secondary-foreground: 215 19.1% 65.1%; /* Lighter secondary text: e.g., #94A3B8 */
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 215 25.1% 26.7%;
+    --muted-foreground: 215 19.1% 65.1%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 179 78.7% 41.6%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%; /* Keeping existing dark destructive */
+    --destructive-foreground: 210 40% 98%; /* Keeping existing dark destructive fg */
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 215 25.1% 26.7%; /* Darker border for dark card: e.g., #334155 */
+    --input: 215 25.1% 26.7%;
+    --ring: 179 78.7% 41.6%; /* Accent blue for ring: #17BEBB (remains same) */
   }
 }
 
@@ -97,5 +76,8 @@
 
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-primary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 }
